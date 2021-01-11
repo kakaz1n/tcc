@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 20%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="goDashboard()">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: center;float: left;margin-left: 15%;">
+      <ion-label style="font-size:x-large;text-align: center;">
+        Avaliações
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" color="primary" color="primary" >  
+    <h2 style="margin-left: 5%;margin-right: 5%;">Para a criação da sua rotina de exercícios, você precisa realizar as seguintes avaliações:</h2>
+    <h5 style="margin-left: 5%;margin-right: 5%;">* algumas avaliações são realizadas apenas em indivíduos acima de 50 anos de idade</h5>
+<div class="container">
+  <ion-img src="../assets/fotos/aerobica.jpeg" >
+  </ion-img>
+  <div class="centered">Capacidade Aeróbica</div>
+</div>
+<div class="container">
+  <ion-img src="../assets/fotos/funcional.jpg"  >
+  </ion-img>
+  <div class="centered">Capacidade Musculoesquelética <br>
+      e<br>
+    Funcional
+  </div>
+</div>
+<div class="container">
+  <ion-img src="../assets/fotos/flexibilidade.jpeg"  >
+  </ion-img>
+  <div class="centered">Flexibilidade</div>
+</div>
+<div class="container">
+  <ion-img src="../assets/fotos/antropometria.jpg"  >
+  </ion-img>
+  <div class="centered">Antropometria</div>
+</div>
+  <ion-button color="tertiary" expand="full" style="position: relative;margin: 0%;" (click)="goOrientacoesGerais()">
+  Iniciar</ion-button>
+</ion-content>

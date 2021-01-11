@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 10%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="goAtividadefisica()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login"
+      style="text-align: left;float: left;margin-top: 5%;margin-left: 5%; font-size: xx-large;font-weight: bold;">
+      <ion-label>
+        Atividade Física
+      </ion-label>
+    </div>
+    <div style="float: left; text-align: justify;font-size: large;">
+      Selecione a(s) atividade(s) física(s) que você realiza:
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" class="ion-content" color="primary">
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;margin-right: 5%;" name="caminhada" (ionChange)="onTermsChecked($event)"
+      color="secondary">
+    </ion-checkbox>
+    <h3>Caminhada</h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;border-radius: 10%;margin-right: 5%;"
+      (ionChange)="onTermsChecked($event)" name="corrida"color="secondary">
+    </ion-checkbox>
+    <h3>Corrida </h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox class="checkbox-square" style="width: 10%;height: 10%;float: left;margin-right: 5%;"
+      (ionChange)="onTermsChecked($event)" color="secondary" name="ciclismo">
+    </ion-checkbox>
+    <h3>Ciclismo</h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;margin-right: 5%;" name="natacao" (ionChange)="onTermsChecked($event)"
+      color="secondary">
+    </ion-checkbox>
+    <h3>Natação </h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;margin-right: 5%;" name="hidro" (ionChange)="onTermsChecked($event)"
+      color="secondary">
+    </ion-checkbox>
+    <h3>Hidroginástica </h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;margin-right: 5%;" name="musculacao" (ionChange)="onTermsChecked($event)"
+      isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Musculação</h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;margin-right: 5%;" name="funcional" (ionChange)="onTermsChecked($event)"
+      isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Treinamento funcional</h3>
+  </div>
+  <div style="text-align: left;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;margin-right: 5%;" name="pillates" (ionChange)="onTermsChecked($event)"
+      isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Pillates</h3>
+  </div>
+  <ion-item  color="transparent">
+    <ion-label position="floating" style="font-size:xx-large;">Outra atividade</ion-label>
+    <ion-input type="text"  placeholder="Alpinismo" name="outra" (ionChange)="onTermsChecked($event)" ></ion-input>
+  </ion-item>
+  <ion-button full class="your-class" color="secondary" (click)="somar()" [disabled]="!clicavel">
+    Continuar
+  </ion-button>
+
+</ion-content>

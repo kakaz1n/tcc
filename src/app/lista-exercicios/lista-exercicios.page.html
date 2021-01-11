@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+
+    <div style="width: 30%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button href="/dashboard">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: right;float: left;margin-top: 5%;">
+      <ion-label>
+        Exercicios
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" color="primary" class="ion-content" scrollX="true"><!---->
+  <ion-list class="ios list-ios hydrated" style="margin-top:-5%;margin-bottom: -5%;">
+    <ion-item *ngFor="let booking of sortBy('nome')" class="user-list" color="transparent" lines='none'>
+          <ion-button [routerLink]="['/exercicio/',booking.$key]" color="transparent"  style="height:40px;" >
+           <h3>{{booking.nome}} </h3>
+          </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

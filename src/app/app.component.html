@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="content1">
+    <ion-header>
+      <div style="float:left;text-align: center;margin-left: 20%;margin-top: 10%;">
+        <ion-avatar item-start style="margin-left:40px">
+          <img [src]="url">
+        </ion-avatar>
+        <ion-label style="margin-left: 40px;">
+          {{this.nome}}
+        </ion-label>
+      </div>
+
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle auto-hide="true">
+
+        <ion-list *ngFor="let pages of navigate">
+          <ion-item [routerLink]="pages.url" routerDirection="forward">
+            <ion-icon [name]="pages.icon" item-left></ion-icon>
+            <ion-label style="margin-left: 5%;">
+              {{pages.title}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-item (click)="logout()">
+          <ion-icon name="exit-outline" item-left></ion-icon>
+          <ion-label style="margin-left: 5%;">
+            Deslogar
+          </ion-label>
+        </ion-item>
+        <ion-item (click)="sair()">
+          <ion-icon name="close-outline" item-left></ion-icon>
+          <ion-label style="margin-left: 5%;">
+            Sair
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content1"></ion-router-outlet>
+</ion-app>
+<!--  
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" class="ios" tab="home">
+      <ion-icon name="list-box"></ion-icon>
+      <ion-label>Appointments</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/make-appointment" class="ios" tab="make-appointment">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Book Appointment</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>-->

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 20%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="goPre_questionario()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: left;float: left;margin-top: 5%; font-size: xx-large;font-weight: bold;">
+      <ion-label>
+        Sinais e Sintomas
+      </ion-label>
+    </div>
+    <div style="float: left; text-align: justify;font-size: x-large;">
+      Selecione o que você apresenta ou já apresentou:
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true"  class="ion-content" color="primary">
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)" color="secondary">
+    </ion-checkbox>
+    <h3>Dor ou desconforto no peito durante esforço</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox   style="width: 10%;height: 10%;float: left;border-radius: 10%" (ionChange)="onTermsChecked($event)"
+       color="secondary">
+    </ion-checkbox>
+    <h3>Falta de ar sem justificativa</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox class="checkbox-square" style="width: 10%;height: 10%;float: left;"
+      (ionChange)="onTermsChecked($event)"  color="secondary">
+    </ion-checkbox>
+    <h3>Tontura/Vertigem, desmaio e/ou apagões</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  color="secondary">
+    </ion-checkbox>
+    <h3>Inchaço no tornozelo</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  color="secondary">
+    </ion-checkbox>
+    <h3>Sensação desagradável de batimento cardíaco forte, rápido ou irregular</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Sensação de queimação ou câimbras nas pernas ao caminhar distâncias curtas</h3>
+  </div>
+  <ion-button class="your-class" color="secondary" (click)="somar()">
+    Continuar
+  </ion-button>
+
+</ion-content>

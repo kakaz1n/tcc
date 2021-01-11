@@ -1,0 +1,38 @@
+.login{
+    background-color: secondary;
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 10px;
+  text-align: left;
+}
+.estado{
+  float: left;
+  width: 50%;
+}
+.cidade{
+  width: 50%;
+  float: left;
+}
+.dob{
+  width: 100%;
+  float: left;
+}
+.button.centralizado{
+  --border-radius: 36.5px;display: flex;
+  align-items: center;
+  } 
+
+  ion-content {    
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     height: 90vh;     
+  }
+  

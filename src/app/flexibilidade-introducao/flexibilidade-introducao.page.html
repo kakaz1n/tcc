@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 20%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="voltar()">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: center;float: left;margin-top: 2%;margin-left: 2%;">
+      <ion-label style="font-size:xx-large;text-align: center;">
+        Flexibilidade
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" color="primary" class="ion-content">
+  <ion-item lines="none" color="transparent">
+    <div display="block">
+      <h2 style="text-align: center;">
+        Sentar e alcançar <ion-button color="warning"*ngIf="idade<50" (click)="pular()">Pular exercício</ion-button>
+      </h2>
+      <h4 style="text-align: justify;text-justify: distribute">
+        <h3 style="text-align: center;">Equipamento</h3>
+        • Régua graduada de 1 metro. <br>
+        • Fita adesiva<br>
+
+        <h3 style="text-align: center;">Preparação</h3>
+        • Fixe a régua no chão colocando um pedaço de fita adesiva de 30,5 centímetros na régua na altura dos 38
+        centímetros.<br>
+        • Aquecer-se, certificando-se de incluir o exercício de tocar os dedos dos pés na posição sentada.<br>
+        <h3 style="text-align: center;">Procedimentos</h3>
+
+        1. Sentar-se no chão com a régua graduada de um metro entre as pernas ( o zero na sua direção ) e as plantas dos
+        pés separadas cerca
+        de 30,5 centímetros e niveladas de acordo com a fita adesiva que está na altura dos 38 centímetros da régua.<br>
+        2. Peça para um (a) amigo (a) colocar as mãos nos seus joelhos, fazendo uma leve pressão para mantê-los
+        abaixados quando você se
+        curvar para a frente.<br>
+
+        3. Coloque uma mão sobre a outra de forma que os dedos médios de ambas as mãos fiquem nivelados.<br>
+        4. Incline-se lentamente sobre a régua, alcançando o mais longe que puder. Fique nessa posição por dois
+        segundos.<br>
+        5. Anote a distância alcançada.<br>
+        6. Relaxe. Repita o movimento mais duas vezes.<br>
+        7. Anote a pontuação mais alta .<br>
+      </h4>
+    </div>
+  </ion-item>
+  <div class="centralizado">
+    <ion-button full color="tertiary" (click)="proxima_pagina()">
+      Continuar</ion-button>
+  </div>
+</ion-content>

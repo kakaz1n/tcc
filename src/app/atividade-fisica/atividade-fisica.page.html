@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 10%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="goSinais()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: left;float: left;margin-top: 5%; font-size: x-large;font-weight: bold;">
+      <ion-label>
+        Nível de Atividade Física
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" color="primary" class="ion-content" >
+  <div style="height: 25%;">
+
+  </div>
+    <ion-item lines="none" color="transparent">
+      <div display="block">
+        <h4 style="text-align: justify;font-weight: bolder;font-size: larger;">
+          Você realiza atividade física planejada, estruturada, de intensidade no mínimo moderada, por ao menos 30 minutos, em 3 dias da semana, há pelo menos 3 meses?
+        </h4>
+      </div>
+    </ion-item>
+    <div class="estado">
+      <ion-button (click)="resposta('nao')" style="width: 70%;margin-left: 20%;" color="secondary">
+        Não</ion-button>
+    </div>
+    <div class="cidade">
+      <ion-button  style="width: 70%;margin-left: 10%;" color="secondary" (click)="resposta('sim')" >
+        Sim</ion-button>
+    </div>
+</ion-content>

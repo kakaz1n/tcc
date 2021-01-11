@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+
+    <div style="width: 30%;float: left;">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="login" [text]=""></ion-back-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: right;float: left;margin-top: 5%;">
+      <ion-label>
+        Cadastro
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" color="primary" class="ion-content">
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+    <ion-item color="transparent">
+      <ion-label position="floating" style="font-size:xx-large;">Nome</ion-label>
+      <!---->
+      <ion-input type="text" formControlName="nome" placeholder="Seu Nome"  [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.nome">
+        <div class="error-message"
+          *ngIf="validations_form.get('nome').hasError(validation.type) && (validations_form.get('nome').dirty || validations_form.get('nome').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item color="transparent">
+      <ion-label position="floating" style="font-size:xx-large;">Email</ion-label>
+      <!--  -->
+     <ion-input type="text" formControlName="email"  placeholder="exemplo@email.com"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message"
+          *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item color="transparent">
+      <ion-label position="floating" style="font-size:xx-large;">Telefone</ion-label>
+      <ion-input maxlength="15" type="text" formControlName="telefone"
+        [brmasker]="{form: validations_form.get('telefone'), mask: '(99) 99999-9999'}" placeholder="(14) 99999-9999">
+      </ion-input>
+    </ion-item>
+    <ion-item color="transparent">
+      <ion-label position="floating"style="font-size:x-large;">Senha</ion-label>
+      <ion-input type="password" formControlName="senha" class="form-controll" required></ion-input>
+    </ion-item>
+    <ion-item color="transparent">
+      <ion-label position="floating"style="font-size:x-large;">Confirmar Senha</ion-label>
+      <ion-input type="password" formControlName="confirmar_senha" class="form-controll" required></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.senha">
+        <div class="error-message"
+          *ngIf="validations_form.get('senha').hasError(validation.type) && (validations_form.get('senha').dirty || validations_form.get('senha').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+      <div class="error-message"
+        *ngIf="!validations_form.get('confirmar_senha').errors && validations_form.hasError('passwordNotMatch') && (validations_form.get('confirmar_senha').dirty || validations_form.get('confirmar_senha').touched)">
+        Os campos Senha e Confirmar Senha devem ser iguais
+      </div>
+    </div>
+    <div class="estado">
+      <ion-item color="transparent">
+        <ion-label position="floating"style="font-size:x-large;">Estado</ion-label>
+        <ion-select name="estado" formControlName="estado" class="form-controll" required
+          (ionChange)="setCidades(estado)" [(ngModel)]="estado">
+          <ion-select-option [value]="item.sigla" *ngFor="let item of data">{{item.nome}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="cidade">
+      <ion-item color="transparent">
+        <ion-label position="floating"style="font-size:x-large;">Cidade</ion-label>
+        <ion-select name="cidade" formControlName="cidade" class="form-controll" required>
+          <ion-select-option *ngFor="let item2 of cidades">{{item2}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="dob">
+      <ion-item color="transparent">
+        <ion-label position="floating"style="font-size:x-large;">Data de Nascimento</ion-label>
+        <ion-datetime name="dob" formControlName="dob" class="form-controll" displayFormat="DD MM YYYY"
+          pickerFormat="DD MM YYYY"></ion-datetime>
+      </ion-item>
+    </div>
+    <ion-button fill="clear" expand="full" color="light" (click)="selectMedia()" style="margin-bottom: 20%;">
+      <ion-icon slot="start" name="document"></ion-icon>
+      Carregar foto de perfil
+    </ion-button>    
+    <div style="height: 100px;"></div>
+    <h5 style="text-align:center;font-size:x-large;">Sexo</h5>
+    <ion-radio-group (ionChange)="onChangeHandler($event)" name="sexo" formControlName="sexo" class="form-controll">
+      <ion-item color="transparent" class="estado">
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="Masculino" [checked]="this.sexo.sex=='Masculino'" color="light"></ion-radio>
+      </ion-item>
+      <ion-item color="transparent" class="cidade">
+        <ion-label>Feminino</ion-label>
+        <ion-radio value="Feminino" [checked]="this.sexo.sex=='Feminino'" color="light"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <div style=" height: 50%;width:100%;margin-top: 100px;">
+      <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"
+        fromControlName="termos" class="form-controll" color="transparent" name="termos"></ion-checkbox>
+
+      <h3>Autorizo o uso dos meus dados pelo aplicativo.</h3>
+    </div>
+    <ion-button class="centralizado" color="tertiary" type="submit" [disabled]="!validations_form.valid">
+      Cadastrar</ion-button>
+    <label class="error-message">{{errorMessage}}</label>
+    <label class="success-message">{{successMessage}}</label>
+  </form>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 10%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="goAtividadefisica()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: left;float: left;margin-top: 5%; font-size: larger;font-weight: bold;">
+      <ion-label>
+        Estado e Histórico de Saúde
+      </ion-label>
+    </div>
+    <div style="float: left; text-align: justify;font-size: large;">
+      Selecione o que você tem ou já teve:
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true"  class="ion-content" color="primary">
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)" color="secondary">
+    </ion-checkbox>
+    <h3>Ataque Cardíaco(infarto agudo do miocárdio)</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox   style="width: 10%;height: 10%;float: left;border-radius: 10%" (ionChange)="onTermsChecked($event)"
+       color="secondary">
+    </ion-checkbox>
+    <h3>Cirurgia cardíaca, cateterismo ou angioplastia </h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox class="checkbox-square" style="width: 10%;height: 10%;float: left;"
+      (ionChange)="onTermsChecked($event)"  color="secondary">
+    </ion-checkbox>
+    <h3>Marcapasso ou desfibrilador interno implantado ou arritmia </h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  color="secondary">
+    </ion-checkbox>
+    <h3>Doença valvar </h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  color="secondary">
+    </ion-checkbox>
+    <h3>Insuficiência cardíaca </h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Transplante cardíaco</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Doença cardíaca congênita</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Diabetes</h3>
+  </div>
+  <div style="text-align: center;margin-left: 5%;margin-top: 5%;margin-right: 5%;">
+    <ion-checkbox style="width: 10%;height: 10%;float: left;" (ionChange)="onTermsChecked($event)"  isChecked="queimacao" color="secondary">
+    </ion-checkbox>
+    <h3>Doença renal</h3>
+  </div>
+  <ion-button full class="your-class" color="secondary" (click)="somar()">
+    Continuar
+  </ion-button>
+
+</ion-content>

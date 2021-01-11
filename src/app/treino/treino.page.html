@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 10%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="voltar()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: center;float: left;margin-left: 15%; font-size: x-large;font-weight: bold;">
+      <ion-label>
+           Treino {{this.treino}}       
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content  fullscreen="true" color="primary" class="ion-content"> 
+  <div style="min-height: 600px;">
+<ion-item *ngFor="let t of treinos" style="width: 100%;margin-top: 5%;height:100px" color="transparent" lines="none">
+      <ion-button  *ngIf="!this.sem" expand="full" style="display: inline-block;border-radius: 36.5pt; height:100%;width:100%;text-align: center;font-size: 80%;height: 90px;" [color]="t.cor">
+      <div style="font-size: 30px;float: left;position: fixed;margin-right: 90%;margin-left: 2% ;">
+        <ion-icon (click)="goExercicio(t.x.nome)" name="information-circle-outline"></ion-icon>
+      </div>
+        <ion-label>{{t.x.nome}}<br><br><br>
+          {{t.x.intensidade}}</ion-label>
+        
+      <div style="position:relative;float: left;">
+        <ion-checkbox name="{{t.x.nome}}" color="warning" (ionChange)="onTermsChecked($event)"></ion-checkbox>
+      </div>
+      </ion-button>    
+      <!-- caso venha do realizado-->
+      <ion-button  *ngIf="this.sem" expand="full" style="display: inline-block;border-radius: 36.5pt; height:100%;width:100%;text-align: center;font-size: 80%;height: 90px;" [color]="t.cor">
+        <div style="font-size: 30px;float: left;position: fixed;margin-right: 90%;margin-left: 2% ;">
+          <ion-icon (click)="goExercicio(t.x.nome)" name="information-circle-outline"></ion-icon>
+        </div>
+          <ion-label>{{t.x.nome}}<br><br><br>
+            {{t.x.intensidade}}</ion-label>
+          
+        <div style="position:relative;float: left;">
+          <ion-checkbox  color="warning" checked="true"></ion-checkbox>
+        </div>
+        </ion-button>      
+
+  </ion-item>
+    <ion-button  style="width: 70%;margin-left: 10%;" color="tertiary" (click)="set_treino()" [disabled]="!checkado()">
+      Continuar</ion-button>  
+  </div>
+  
+</ion-content>

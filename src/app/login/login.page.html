@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div class="login" style="text-align: center">
+      <ion-label>
+        Login
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content fullscreen="true" color="primary" >
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
+    <div class="email_senha">
+      <ion-item color="transparent">
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="text" formControlName="email" placeholder="Seu Email"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.email">
+            <div class="error-message"
+              *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+    </div>
+    <ion-item color="transparent">
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input placeholder="Sua Senha" type="password" formControlName="senha" class="form-controll" required>
+      </ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.senha">
+        <div class="error-message"
+          *ngIf="validations_form.get('senha').hasError(validation.type) && (validations_form.get('senha').dirty || validations_form.get('senha').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    </div>
+    <div class="cont">
+      <ion-button class="centralizado" color="secondary" type="submit" [disabled]="!validations_form.valid">Entrar
+      </ion-button>
+      <label class="error-message">{{errorMessage}}</label>
+      <div class="linha" style="padding:50px">
+        <!-- <div style="display:inline-block;width:35%;;color:#C0CCDA;border: 0.5px solid #C0CCDA"> </div> -->
+        <div style="display:inline;">
+          <ion-label>OU</ion-label>
+        </div>
+        <!-- <div style="display:inline-block;width:35%;color:#C0CCDA;border: 0.5px solid #C0CCDA"> </div> -->
+      </div>
+      <ion-button class="centralizado" color="secondary" (click)="goToRegisterPage()">Cadastrar</ion-button>
+    </div>
+  </form>
+  <div class="imagens">
+    <ion-img style="width: 80px;float:left; height: 80px;margin-left:20%; background-color: transparent" src="../assets/fotos/logo.png">
+    </ion-img>
+    <ion-img style="width: 80px; float:right;height: 80px;margin-right:20%;background-color: white" src="../assets/fotos/unesp.png">
+    </ion-img>
+  </div>
+</ion-content>

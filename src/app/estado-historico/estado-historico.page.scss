@@ -1,0 +1,30 @@
+.login{
+    background-color: secondary;
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 10px;
+  text-align: left;
+}
+.estado{
+  float: left;
+  width: 50%;
+}
+.cidade{
+  width: 50%;
+  float: left;
+}
+.dob{
+  width: 100%;
+  float: left;
+}
+.button.centralizado{
+  --border-radius: 36.5px;display: flex;
+  align-items: center;
+  } 
+  .your-class {
+    position: static;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    width: 100%;
+}

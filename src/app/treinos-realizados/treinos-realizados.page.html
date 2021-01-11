@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <div style="width: 10%;float: left;">
+      <ion-buttons slot="start">
+        <ion-button (click)="voltar()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="login" style="text-align: center;float: left;margin-left: 15%; font-size: x-large;font-weight: bold;">
+      <ion-label>
+           Treinos Realizados  
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="primary">
+  <div class="ion-padding">
+
+    <ion-calendar [(ngModel)]="dateMulti"
+    [options]="optionsRange"
+    (change)="onChange($event)"
+      [type]="type"
+      [format]="'YYYY-MM-DD'" 
+      >
+    </ion-calendar>
+
+  </div>
+</ion-content>

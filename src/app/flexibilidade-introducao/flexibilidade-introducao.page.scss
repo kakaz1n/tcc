@@ -1,0 +1,30 @@
+   .login{
+    background-color: secondary;
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 10px;
+  text-align: left;
+}
+ion-content {    
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+   .centralizado {
+    position: relative;
+    margin-left: 30%;
+}
+
+.your-class {
+  position: fixed;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+}
